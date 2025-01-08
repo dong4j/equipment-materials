@@ -62,15 +62,10 @@ for original_file in "$ORIGINAL_DIR"/*; do
     webpp "$original_file" "$webp_file"
     
     # 检查转换是否成功
-    if [ -f "$webp_file" ]; then
-      echo "转换成功: $webp_file"
-    else
+    if [ ! -f "$webp_file" ]; then
       echo "转换失败: $webp_file"
     fi
-  else
-    echo "文件已存在，跳过转换: $webp_file"
   fi
 done
-
 
 echo "脚本执行完成。"
